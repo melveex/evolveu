@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World from HTML!</h1>
+    <input type="text" placeholder="Type something..." id="txtSize" />
+    <br />
+
+    <button id="btnSubmit" onclick="onButtonClicked()">Click</button>
+
+    <script>
+      function onButtonClicked() {
+        console.log("I’m in the button click event");
+      }
+
+      document
+        .getElementById("btnSubmit")
+        .addEventListener("click", function() {
+          var input = document.getElementById("txtSize");
+          console.log(size(input.value));
+          console.log(parseInt(input.value) + 1);
+        });
+
+      function size(num) {
+        let result;
+        if (num < 10) {
+          result = "small";
+        } else if (num >= 10 && num <= 19) {
+          result = "medium";
+        } else if (num >= 20) {
+          result = "large";
+        }
+
+        return result;
+      }
+
+      console.log("Hello World from inline JavaScript");
+    </script>
+
+    <script type="text/javascript" src="basic.js"></script>
+  </body>
+</html>
